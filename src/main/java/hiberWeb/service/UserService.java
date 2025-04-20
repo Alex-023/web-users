@@ -1,6 +1,6 @@
-package hiberWeb.hiber.service;
+package hiberWeb.service;
 
-import hiberWeb.hiber.model.User;
+import hiberWeb.model.User;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

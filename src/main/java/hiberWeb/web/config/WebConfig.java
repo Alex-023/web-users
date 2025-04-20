@@ -13,8 +13,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
 @EnableWebMvc
-//@ComponentScan({"hiberWeb/web", "hiberWeb/web/service"})
-@ComponentScan("hiberWeb.web")
+@ComponentScan({"hiberWeb"})
 public class WebConfig implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;

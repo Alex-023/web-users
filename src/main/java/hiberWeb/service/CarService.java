@@ -1,4 +1,4 @@
-package hiberWeb.web.service;
+package hiberWeb.service;
 
 import hiberWeb.model.Car;
 import org.springframework.stereotype.Service;

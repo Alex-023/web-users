@@ -4,20 +4,40 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class User extends hiberWeb.hiber.model.User {
+public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Column(name = "name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "email")
     private String email;
 
-    public User(Long id) {
-        this.id = id;
-    }
-    public User() {
+//    @OneToOne(cascade = CascadeType.ALL) // Каскадное сохранение
+//    @JoinColumn(name = "car_id") // Столбец для связи в таблице users
+//    private Car car;
 
+//   @OneToOne (fetch = FetchType.LAZY)
+//   @MapsId
+//   private Car car;
+
+    public User() {}
+
+    public User(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
+
+//    public Car getCar() { return car; }
+//
+//    public void setCar(Car car) { this.car = car; }
 
     public Long getId() {
         return id;
@@ -27,12 +47,20 @@ public class User extends hiberWeb.hiber.model.User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
@@ -42,5 +70,4 @@ public class User extends hiberWeb.hiber.model.User {
     public void setEmail(String email) {
         this.email = email;
     }
-// Геттеры, сеттеры, конструкторы
 }

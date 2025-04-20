@@ -1,8 +1,8 @@
 package org.example;
 
 import hiberWeb.hiber.config.AppConfig;
-import hiberWeb.hiber.model.User;
-import hiberWeb.hiber.service.UserService;
+import hiberWeb.model.User;
+import hiberWeb.service.UserService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.List;

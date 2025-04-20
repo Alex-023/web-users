@@ -1,7 +1,7 @@
 package hiberWeb.web.controller;
 
 import hiberWeb.model.User;
-import hiberWeb.web.service.UserService;
+import hiberWeb.service.UserServiceImp1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UserController {
 
-    private final UserService userService;
+    private final UserServiceImp1 userService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserServiceImp1 userService) {
         this.userService = userService;
     }
 

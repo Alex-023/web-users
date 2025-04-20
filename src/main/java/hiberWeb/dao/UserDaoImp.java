@@ -1,6 +1,6 @@
-package hiberWeb.hiber.dao;
+package hiberWeb.dao;
 
-import hiberWeb.hiber.model.User;
+import hiberWeb.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

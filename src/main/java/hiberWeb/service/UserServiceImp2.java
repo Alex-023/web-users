@@ -1,15 +1,17 @@
-package hiberWeb.hiber.service;
+package hiberWeb.service;
 
-import hiberWeb.hiber.dao.UserDao;
-import hiberWeb.hiber.model.User;
+import hiberWeb.dao.UserDao;
+import hiberWeb.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Primary
 @Service
-public class UserServiceImp implements UserService {
+public class UserServiceImp2 implements UserService {
 
     @Autowired
     private UserDao userDao;

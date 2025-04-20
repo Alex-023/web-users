@@ -1,4 +1,4 @@
-package hiberWeb.web.service;
+package hiberWeb.service;
 
 
 
@@ -10,13 +10,13 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserService {
+public class UserServiceImp1 {
 
-    private final hiberWeb.hiber.service.UserService userServiceH;
+    private final UserService userServiceH;
 
     @Autowired
 
-    public UserService(hiberWeb.hiber.service.UserService userServiceH) {
+    public UserServiceImp1(UserService userServiceH) {
         this.userServiceH = userServiceH;
     }
 
