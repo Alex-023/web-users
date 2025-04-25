@@ -19,13 +19,6 @@ public class User {
     @Column(name = "email")
     private String email;
 
-//    @OneToOne(cascade = CascadeType.ALL) // Каскадное сохранение
-//    @JoinColumn(name = "car_id") // Столбец для связи в таблице users
-//    private Car car;
-
-//   @OneToOne (fetch = FetchType.LAZY)
-//   @MapsId
-//   private Car car;
 
     public User() {}
 
@@ -35,9 +28,6 @@ public class User {
         this.email = email;
     }
 
-//    public Car getCar() { return car; }
-//
-//    public void setCar(Car car) { this.car = car; }
 
     public Long getId() {
         return id;

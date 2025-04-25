@@ -5,33 +5,37 @@
     <title>Users</title>
 </head>
 <body>
-<h1>Список пользователей</h1>
-<!-- Форма добавления/редактирования -->
-<form th:action="@{/users/save}" th:object="${user}" method="post">
-    <input type="hidden" th:field="*{id}">
-    <input type="text" th:field="*{name}" placeholder="Name">
-    <input type="email" th:field="*{email}" placeholder="Email">
-    <button type="submit">Save</button>
-</form>
+<h1>List USERS</h1>
+
 
 <!-- Таблица пользователей -->
 <table border="1">
     <tr>
         <th>ID</th>
-        <th>Имя</th>
-        <th>Фамилия</th>
-        <th>Email</th>
+        <th>Name</th>
+        <th>Last name</th>
+        <th>E-mail</th>
+        <th>Action</th>
     </tr>
     <tr th:each="user : ${users}">
         <td th:text="${user.id}"></td>
-        <td th:text="${user.name}"></td>
-        <td th:text="${user.last_name}"></td>
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
         <td th:text="${user.email}"></td>
         <td>
-            <a th:href="@{/users/edit/{id}(id=${user.id})}">Edit</a>
-            <a th:href="@{/users/delete/{id}(id=${user.id})}">Delete</a>
+            <a th:href="@{/edit/{id}(id=${user.id})}">Edit</a>
+            <a th:href="@{/delete/{id}(id=${user.id})}">Delete</a>
         </td>
     </tr>
 </table>
+
+<!-- Форма добавления/редактирования -->
+<form th:action="@{/save}" th:object="${user}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <input type="text" th:field="*{firstName}" placeholder="Name">
+    <input type="text" th:field="*{lastName}" placeholder="Last Name">
+    <input type="email" th:field="*{email}" placeholder="E-mail">
+    <button type="submit">Save</button>
+</form>
 </body>
 </html>
