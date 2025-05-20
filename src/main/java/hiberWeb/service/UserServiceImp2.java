@@ -1,16 +1,18 @@
 package hiberWeb.service;
 
 import hiberWeb.dao.UserDao;
+import hiberWeb.model.Role;
 import hiberWeb.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Primary
 @Service
 public class UserServiceImp2 implements UserService {
-//Hibernate
+    //Hibernate
     @Autowired
     private UserDao userDao;
 
@@ -22,7 +24,9 @@ public class UserServiceImp2 implements UserService {
 
 
     @Override
-    public void save(User user) {userDao.save(user);}
+    public void save(User user) {
+        userDao.save(user);
+    }
 
 
     @Override
@@ -51,4 +55,16 @@ public class UserServiceImp2 implements UserService {
         userDao.delete(id);
     }
 
+    public Role findRoleByName(String name) {
+        return userDao.findRoleByName(name);
+    }
+
+    public void createRoleIfNotExists(String name) {
+        userDao.createRoleIfNotExists(name);
+    }
+
+    public User findUserByNick(String nick){
+        return userDao.findUserByNick(nick);
+    }
+    public List<Role> listRoles(){return userDao.listRoles();}
 }

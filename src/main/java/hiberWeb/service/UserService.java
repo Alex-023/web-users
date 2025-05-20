@@ -1,5 +1,6 @@
 package hiberWeb.service;
 
+import hiberWeb.model.Role;
 import hiberWeb.model.User;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,15 +10,22 @@ public interface UserService {
     @Transactional
     List<User> listUsers();
 
+    @Transactional
     void save(User user);
     List<User> findAll();
 
-    @javax.transaction.Transactional
+    @Transactional
     User findById(Long id);
 
-    @javax.transaction.Transactional
+    @Transactional
     void delete(Long id);
 
-    @javax.transaction.Transactional
+    @Transactional
     void update(User user);
+
+    @Transactional
+    User findUserByNick(String nick);
+
+    @Transactional
+    List<Role> listRoles();
 }

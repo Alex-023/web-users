@@ -1,5 +1,6 @@
 package hiberWeb.service;
 
+import hiberWeb.model.Role;
 import hiberWeb.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,12 +27,7 @@ public class UserServiceImp1 {
     }
 
     public void save(User user) {
-        if (userServiceH.findById(user.getId()) != null){
-            userServiceH.update(user);
-        } else {
-            userServiceH.save(user);
-        }
-
+        userServiceH.update(user);
     }
 
     public void update(User user) {
@@ -40,5 +36,11 @@ public class UserServiceImp1 {
 
     public void delete(Long id) {
         userServiceH.delete(id);
+    }
+
+    public List<Role> listRoles(){return userServiceH.listRoles();}
+
+    public User findUserByNick(String nick){
+        return userServiceH.findUserByNick(nick);
     }
 }

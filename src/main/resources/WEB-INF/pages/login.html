@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+    <form method="post" action="/login">
+        <input name="j_username"/>
+        <input name="j_password"/>
+        <input type="submit"/>
+    </form>
+</div>
+<div>
+<table border="1">
+    <tr>
+<!--        <th>ID</th>-->
+        <th>Name</th>
+<!--        <th>Last name</th>-->
+<!--        <th>E-mail</th>-->
+    </tr>
+    <tr th:each="msg : ${user}">
+       <td> <h1 th:text="${msg}"></h1></td>
+    </tr>
+
+</table>
+</div>
+<div>
+    <form method="POST" action="/logout">
+        <button type="submit">Exit</button>
+    </form>
+</div>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Login</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
